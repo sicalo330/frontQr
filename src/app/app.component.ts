@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConectionService } from './service/conection.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'qrAngular';
+
+  constructor(private conect:ConectionService){}
+
+  obtenerValor(valor: string) {
+    console.log(valor);
+    this.conect.conection(valor).subscribe(data => {
+      console.log(data)
+    })
+  }
 }
