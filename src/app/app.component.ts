@@ -7,14 +7,18 @@ import { ConectionService } from './service/conection.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  loading:boolean = false
   title = 'qrAngular';
 
   constructor(private conect:ConectionService){}
 
   obtenerValor(valor: string) {
-    console.log(valor);
-    this.conect.conection(valor).subscribe(data => {
-      console.log(data)
+    this.loading = true
+    this.conect.conection(valor).subscribe(data => { 
+      if(data == 'ok'){
+        this.loading = false  
+      }
+      console.log(this.loading)
     })
   }
 }

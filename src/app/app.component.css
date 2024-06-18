@@ -1,0 +1,11 @@
+.blockInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header{
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
